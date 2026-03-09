@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bookstore.controller.InventoryController">
+    <children>
+        <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="60.0" style="-fx-background-color: white; -fx-padding: 0 20 0 20;">
+                    <children>
+                        <Label text="THỐNG KÊ TỒN KHO" textFill="#2c3e50">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <TableView fx:id="tableInventory" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colMaSach" prefWidth="60.0" text="Mã" />
+                        <TableColumn fx:id="colTenSach" prefWidth="250.0" text="Tên sách" />
+                        <TableColumn fx:id="colTheLoai" prefWidth="100.0" text="Thể loại" />
+                        <TableColumn fx:id="colSoLuong" prefWidth="100.0" text="Số lượng" />
+                        <TableColumn fx:id="colGiaBia" prefWidth="100.0" text="Giá bìa" />
+                        <TableColumn fx:id="colGiaTri" prefWidth="120.0" text="Giá trị tồn" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

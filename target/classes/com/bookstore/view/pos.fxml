@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bookstore.controller.POSController">
+    <children>
+        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <!-- Left Panel - Book Selection -->
+                <VBox prefWidth="500.0" spacing="10" style="-fx-background-color: white; -fx-padding: 10;">
+                    <children>
+                        <Label text="CHỌN SÁCH" textFill="#2c3e50">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+
+                        <HBox spacing="10">
+                            <TextField fx:id="txtSearchBook" prefWidth="250.0" promptText="Tìm sách..." />
+                            <Button fx:id="btnAddToCart" mnemonicParsing="false" onAction="#handleAddToCart" style="-fx-background-color: #27ae60;" text="Thêm vào giỏ" textFill="white" />
+                        </HBox>
+
+                        <TableView fx:id="tableBooks" prefHeight="400.0">
+                            <columns>
+                                <TableColumn fx:id="colBookMa" prefWidth="50.0" text="Mã" />
+                                <TableColumn fx:id="colBookTen" prefWidth="200.0" text="Tên sách" />
+                                <TableColumn fx:id="colBookGia" prefWidth="100.0" text="Giá" />
+                                <TableColumn fx:id="colBookTon" prefWidth="80.0" text="Tồn" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+                <!-- Right Panel - Cart and Checkout -->
+                <VBox prefWidth="500.0" spacing="10" style="-fx-background-color: white; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="GIỎ HÀNG" textFill="#2c3e50">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+
+                        <HBox spacing="10">
+                            <ComboBox fx:id="cboCustomer" prefWidth="200.0" promptText="Chọn khách hàng" />
+                            <ComboBox fx:id="cboPayment" prefWidth="150.0" />
+                        </HBox>
+
+                        <TableView fx:id="tableCart" prefHeight="300.0">
+                            <columns>
+                                <TableColumn fx:id="colCartTen" prefWidth="200.0" text="Tên sách" />
+                                <TableColumn fx:id="colCartSL" prefWidth="80.0" text="Số lượng" />
+                                <TableColumn fx:id="colCartGia" prefWidth="100.0" text="Đơn giá" />
+                                <TableColumn fx:id="colCartThanhTien" prefWidth="120.0" text="Thành tiền" />
+                                <TableColumn fx:id="colCartXoa" prefWidth="60.0" text="Xóa" />
+                            </columns>
+                        </TableView>
+
+                        <VBox spacing="5" style="-fx-padding: 10; -fx-background-color: #ecf0f1;">
+                            <children>
+                                <HBox alignment="CENTER_RIGHT" spacing="20">
+                                    <Label text="Tổng tiền:" />
+                                    <Label fx:id="lblTongTien" text="0 ₫" textFill="#e74c3c">
+                                        <font>
+                                            <Font name="System Bold" size="20.0" />
+                                        </font>
+                                    </Label>
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" spacing="20">
+                                    <Label text="Giảm giá (%):" />
+                                    <TextField fx:id="txtGiamGia" prefWidth="80.0" text="0" />
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" spacing="20">
+                                    <Label text="Thanh toán:" />
+                                    <Label fx:id="lblThanhToan" text="0 ₫" textFill="#27ae60">
+                                        <font>
+                                            <Font name="System Bold" size="24.0" />
+                                        </font>
+                                    </Label>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="10">
+                            <Button fx:id="btnThanhtoan" mnemonicParsing="false" onAction="#handleCheckout" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #27ae60;" text="THANH TOÁN" textFill="white">
+                                <font>
+                                    <Font name="System Bold" size="16.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="btnHuy" mnemonicParsing="false" onAction="#handleCancel" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #e74c3c;" text="HỦY" textFill="white" />
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
