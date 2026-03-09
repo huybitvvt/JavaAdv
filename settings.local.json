@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"E:\\\\Apache NetBeans\\\\java\\\\maven\\\\bin\\\\mvn.cmd\" compile -DskipTests -q)",
+      "Bash(cmd /c \"cd /d E:\\\\JavaFinal\\\\JavaFinal && E:\\\\Apache NetBeans\\\\java\\\\maven\\\\bin\\\\mvn.cmd compile -DskipTests -q\")",
+      "Bash(cmd /c \"cd /d E:\\\\JavaFinal\\\\JavaFinal && E:\\\\Apache NetBeans\\\\java\\\\maven\\\\bin\\\\mvn.cmd clean compile -DskipTests\")",
+      "Bash(cmd /c \"dir /s E:\\\\JavaFinal\\\\JavaFinal\\\\target\\\\classes\\\\com\\\\bookstore\\\\view\\\\book.fxml\")",
+      "Bash(cmd /c \"dir E:\\\\JavaFinal\\\\JavaFinal\\\\target\\\\classes\\\\com\\\\bookstore 2>&1\")",
+      "Bash(cmd /c \"cd /d E:\\\\JavaFinal\\\\JavaFinal && rmdir /s /q target && E:\\\\Apache NetBeans\\\\java\\\\maven\\\\bin\\\\mvn.cmd compile -DskipTests\")",
+      "Bash(mvn clean compile -q)",
+      "Bash(where mvn)",
+      "Bash(cmd /c \"cd /d E:\\\\JavaFinal\\\\JavaFinal && mvn clean compile -q\")",
+      "Bash(cmd /c \"cd /d E:\\\\JavaFinal\\\\JavaFinal && mvn clean compile\")",
+      "Bash(cmd /c \"mvn --version\")",
+      "Bash(powershell -Command \"Get-Command mvn -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")"
+    ]
+  }
+}
