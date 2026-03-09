@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bookstore.controller.StatisticsController">
+    <children>
+        <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="60.0" style="-fx-background-color: white; -fx-padding: 0 20 0 20;">
+                    <children>
+                        <Label text="THỐNG KÊ DOANH THU" textFill="#2c3e50">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20" style="-fx-padding: 10; -fx-background-color: #ecf0f1;">
+                    <children>
+                        <Label text="Từ ngày:" />
+                        <DatePicker fx:id="dpStartDate" />
+                        <Label text="Đến ngày:" />
+                        <DatePicker fx:id="dpEndDate" />
+                        <ComboBox fx:id="cboPeriod" prefWidth="150.0" />
+                        <Button fx:id="btnGenerate" mnemonicParsing="false" onAction="#handleGenerate" style="-fx-background-color: #3498db;" text="Tạo báo cáo" textFill="white" />
+                        <Button fx:id="btnExport" mnemonicParsing="false" onAction="#handleExport" style="-fx-background-color: #27ae60;" text="Xuất PDF" textFill="white" />
+                    </children>
+                </HBox>
+
+                <HBox prefHeight="200.0" spacing="20" style="-fx-padding: 20;">
+                    <children>
+                        <VBox prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: #3498db; -fx-background-radius: 10; -fx-padding: 20;">
+                            <children>
+                                <Label text="Tổng doanh thu" textFill="white" />
+                                <Label fx:id="lblTotalRevenue" text="0 ₫" textFill="white">
+                                    <font>
+                                        <Font name="System Bold" size="32.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: #27ae60; -fx-background-radius: 10; -fx-padding: 20;">
+                            <children>
+                                <Label text="Số hóa đơn" textFill="white" />
+                                <Label fx:id="lblTotalInvoices" text="0" textFill="white">
+                                    <font>
+                                        <Font name="System Bold" size="32.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 10; -fx-padding: 20;">
+                            <children>
+                                <Label text="Giá trị TB/đơn" textFill="white" />
+                                <Label fx:id="lblAvgInvoice" text="0 ₫" textFill="white">
+                                    <font>
+                                        <Font name="System Bold" size="32.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <HBox VBox.vgrow="ALWAYS" spacing="20" style="-fx-padding: 20;">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 10;">
+                            <children>
+                                <Label text="Biểu đồ doanh thu" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <AnchorPane fx:id="chartRevenuePane" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 10;">
+                            <children>
+                                <Label text="Sách theo thể loại" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <AnchorPane fx:id="chartCategoryPane" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

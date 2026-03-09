@@ -1,0 +1,233 @@
+/* Main Stylesheet for Bookstore Application */
+
+/* Root Variables */
+.root {
+    -fx-primary-color: #2c3e50;
+    -fx-secondary-color: #3498db;
+    -fx-accent-color: #e74c3c;
+    -fx-success-color: #27ae60;
+    -fx-warning-color: #f39c12;
+    -fx-text-color: #2c3e50;
+    -fx-background-color: #ecf0f1;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: -fx-text-color;
+    -fx-font-size: 14px;
+}
+
+.label-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary-color;
+}
+
+.label-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary-color;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: -fx-secondary-color;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+    -fx-background-radius: 4;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #1a5276;
+}
+
+.button-secondary {
+    -fx-background-color: #95a5a6;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.button-danger {
+    -fx-background-color: -fx-accent-color;
+}
+
+.button-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+.button-success {
+    -fx-background-color: -fx-success-color;
+}
+
+.button-success:hover {
+    -fx-background-color: #229954;
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-border-color: -fx-secondary-color;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.combo-box:focused {
+    -fx-border-color: -fx-secondary-color;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+}
+
+.table-view .column-header {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-padding: 8;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e8f4f8;
+}
+
+/* MenuBar */
+.menu-bar {
+    -fx-background-color: -fx-primary-color;
+}
+
+.menu-item {
+    -fx-text-fill: white;
+}
+
+.menu-item:hover {
+    -fx-background-color: -fx-secondary-color;
+}
+
+/* Toolbar */
+.toolbar {
+    -fx-background-color: white;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+
+/* Card */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: white;
+    -fx-padding: 5 10 5 10;
+}
+
+/* Alert/Message */
+.message-success {
+    -fx-text-fill: -fx-success-color;
+    -fx-font-weight: bold;
+}
+
+.message-error {
+    -fx-text-fill: -fx-accent-color;
+    -fx-font-weight: bold;
+}
+
+.message-warning {
+    -fx-text-fill: -fx-warning-color;
+    -fx-font-weight: bold;
+}
+
+/* Tabs */
+.tab {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 10 20 10 20;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: -fx-secondary-color;
+    -fx-border-width: 0 0 3 0;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+}
+
+.list-cell {
+    -fx-padding: 10;
+}
+
+.list-cell:even {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Pagination */
+.pagination {
+    -fx-background-color: white;
+}
+
+/* DatePicker */
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+}
+
+.date-picker:focused {
+    -fx-border-color: -fx-secondary-color;
+}
+
+/* Dialog */
+.dialog-pane {
+    -fx-background-color: white;
+}
+
+/* Spinner */
+.spinner {
+    -fx-background-color: white;
+}
+
+/* ProgressBar */
+.progress-bar {
+    -fx-accent-color: -fx-success-color;
+}

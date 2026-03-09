@@ -1,0 +1,38 @@
+package com.bookstore.util;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+/**
+ * Password Utility - Mã hóa mật khẩu
+ */
+public class PasswordUtil {
+
+    /**
+     * Mã hóa password thành MD5
+     */
+    public static String md5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : messageDigest) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Kiểm tra password
+     */
+    public static boolean verify(String input, String stored) {
+        return md5(input).equals(stored);
+    }
+}

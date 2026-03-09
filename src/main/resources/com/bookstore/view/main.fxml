@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bookstore.controller.MainController">
+    <top>
+        <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu text="Hệ thống">
+                    <MenuItem text="Đổi mật khẩu" onAction="#showChangePasswordDialog" />
+                    <MenuItem text="Đăng xuất" onAction="#handleLogout" />
+                    <MenuItem text="Thoát" onAction="#handleExit" />
+                </Menu>
+                <Menu text="Quản lý">
+                    <MenuItem text="Sách" onAction="#showBookManagement" />
+                    <MenuItem text="Khách hàng" onAction="#showCustomerManagement" />
+                    <MenuItem text="Nhân viên" onAction="#showEmployeeManagement" />
+                    <MenuItem text="Nhà cung cấp" onAction="#showSupplierManagement" />
+                </Menu>
+                <Menu text="Bán hàng">
+                    <MenuItem text="Bán hàng" onAction="#showPOS" />
+                    <MenuItem text="Hóa đơn" onAction="#showInvoiceManagement" />
+                </Menu>
+                <Menu text="Nhập hàng">
+                    <MenuItem text="Nhập hàng" onAction="#showImportManagement" />
+                </Menu>
+                <Menu text="Báo cáo">
+                    <MenuItem text="Thống kê doanh thu" onAction="#showRevenueStatistics" />
+                    <MenuItem text="Thống kê tồn kho" onAction="#showInventoryStatistics" />
+                </Menu>
+                <Menu text="Trợ giúp">
+                    <MenuItem text="Giới thiệu" onAction="#showAbout" />
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <left>
+        <VBox prefWidth="220.0" style="-fx-background-color: #2c3e50;" BorderPane.alignment="CENTER">
+            <children>
+                <!-- User Info -->
+                <VBox alignment="CENTER" prefHeight="120.0" spacing="10" style="-fx-padding: 15;">
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/user-icon.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="lblUserName" text="Xin chào, Admin" textFill="white" />
+                        <Label fx:id="lblUserRole" text="Quản trị viên" textFill="#bdc3c7" />
+                    </children>
+                </VBox>
+
+                <VBox spacing="2" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button fx:id="btnDashboard" alignment="BASELINE_LEFT" graphicTextGap="10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showDashboard" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 0 15 0 15;" text="📊 Tổng quan" />
+                        <Button fx:id="btnBooks" alignment="BASELINE_LEFT" graphicTextGap="10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showBookManagement" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 0 15 0 15;" text="📚 Quản lý sách" />
+                        <Button fx:id="btnCustomers" alignment="BASELINE_LEFT" graphicTextGap="10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showCustomerManagement" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 0 15 0 15;" text="👥 Khách hàng" />
+                        <Button fx:id="btnEmployees" alignment="BASELINE_LEFT" graphicTextGap="10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showEmployeeManagement" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 0 15 0 15;" text="👨‍💼 Nhân viên" />
+                        <Button fx:id="btnSuppliers" alignment="BASELINE_LEFT" graphicTextGap="10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showSupplierManagement" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 0 15 0 15;" text="🏭 Nhà cung cấp" />
+                        <Button fx:id="btnPOS" alignment="BASELINE_LEFT" graphicTextGap="10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showPOS" prefHeight="45.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 0 15 0 15;" text="🛒 Bán hàng" />
+                        <Button fx:id="btnInvoices" alignment="BASELINE_LEFT" graphicTextGap="10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showInvoiceManagement" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 0 15 0 15;" text="📄 Hóa đơn" />
+                        <Button fx:id="btnImports" alignment="BASELINE_LEFT" graphicTextGap="10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showImportManagement" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 0 15 0 15;" text="📥 Nhập hàng" />
+                        <Button fx:id="btnStatistics" alignment="BASELINE_LEFT" graphicTextGap="10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showRevenueStatistics" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 0 15 0 15;" text="📈 Thống kê" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <AnchorPane fx:id="contentArea" BorderPane.alignment="CENTER">
+        </AnchorPane>
+    </center>
+
+    <bottom>
+        <HBox prefHeight="25.0" style="-fx-background-color: #2c3e50;" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lblStatus" text="Sẵn sàng" textFill="white" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
